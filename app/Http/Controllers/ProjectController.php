@@ -22,7 +22,7 @@ class ProjectController extends Controller
     }
     public function show(Request $request, Project $project)
     {
-        return (new ProjectResource($project))->load('tasks');
+        return (new ProjectResource($project))->load('tasks')->load('members');
     }
 
     public function store(StoreProjectRequest $request)
